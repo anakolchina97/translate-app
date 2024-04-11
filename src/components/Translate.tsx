@@ -41,7 +41,6 @@ const Translate = ({ setText, text }: ITranslate) => {
 
 const TranslateWrap = styled.div`
   padding: ${rem(16)};
-  width: ${rem(559)};
   border-radius: ${rem(16)};
   background: ${({ theme }) => theme.colors.grey};
   color: ${({ theme }) => theme.colors.white};
@@ -52,6 +51,10 @@ const TranslateHeader = styled.header`
   gap: ${rem(16)};
   align-items: center;
   margin-bottom: ${rem(16)};
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const TranslateHeaderTitle = styled.p``;

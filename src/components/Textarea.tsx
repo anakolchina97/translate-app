@@ -1,10 +1,19 @@
 import styled from "styled-components";
 import { rem } from "polished";
+import axios from "axios";
 
 const Textarea = ({ setText }: { setText: (text: string) => void }) => {
+  const getTranslate = async (value: string) => {
+    const url = `https://api.mymemory.translated.net/get?q=${value}&langpair=ru|en`;
+    const { data } = await axios.get(url);
+    const { translatedText } = await data.responseData;
+    setText(translatedText);
+  };
   return (
     <>
-      <TextareaWrap onChange={(e) => setText(e.target.value)}></TextareaWrap>
+      <TextareaWrap
+        onChange={(e) => getTranslate(e.target.value)}
+      ></TextareaWrap>
     </>
   );
 };

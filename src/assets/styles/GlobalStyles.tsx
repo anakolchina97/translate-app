@@ -23,7 +23,14 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
     justify-content: center;
     background:#000;
+    padding: 0 1rem;
     
+  }
+
+  #root {
+    @media (max-width: 500px)  {
+      width: 100%;
+    }
   }
 
   ul, ol {

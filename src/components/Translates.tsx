@@ -17,7 +17,11 @@ const Translates = () => {
 const TranslatesWrap = styled.div`
   display: grid;
   gap: ${rem(20)};
-  grid-template-columns: repeat(2, ${rem(559)});
+  grid-template-columns: repeat(2, minmax(auto, ${rem(559)}));
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export default Translates;
